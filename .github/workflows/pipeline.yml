@@ -10,7 +10,6 @@ jobs:
   test:
     name: Run Tests
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -20,7 +19,7 @@ jobs:
         with:
           node-version: "20"
 
-       - name: Install dependencies
+      - name: Install dependencies
         run: npm install
 
       - name: Fix jest permissions
@@ -33,7 +32,6 @@ jobs:
     name: Build and Push Docker Image
     runs-on: ubuntu-latest
     needs: test
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
